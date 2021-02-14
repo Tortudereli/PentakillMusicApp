@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="tr" id="loadHtml">
+<script>
+    function makeHttpObject() {
+        try {
+            return new XMLHttpRequest();
+        } catch (error) {}
+        try {
+            return new ActiveXObject("Msxml2.XMLHTTP");
+        } catch (error) {}
+        try {
+            return new ActiveXObject("Microsoft.XMLHTTP");
+        } catch (error) {}
+
+        throw new Error("Could not create HTTP request object.");
+    }
+
+    var request = makeHttpObject();
+    request.open("GET", "https://raw.githubusercontent.com/Tortudereli/PentakillMusic/main/src/index.html", true);
+    request.send(null);
+    request.onreadystatechange = function () {
+        if (request.readyState == 4) {
+            document.getElementById('loadHtml').innerHTML = request.responseText;
+        }
+    };
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        var elem = document.createElement('script');
+        elem.src = "https://cdn.jsdelivr.net/gh/Tortudereli/PentakillMusic@latest/src/index.js";
+        document.body.appendChild(elem);
+    })
+</script>
+
+</html>

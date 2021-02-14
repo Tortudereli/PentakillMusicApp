@@ -1,0 +1,21 @@
+{
+  "name": "pentakillMusicApp",
+  "version": "1.0.0",
+  "description": "Tortudereli | Pentakill Music",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . PentakillMusic --asar --overwrite --platform=win32 --arch=ia32 --icon=icon/icon.ico --out=out"
+  },
+  "keywords": [],
+  "author": "Tortudereli",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^10.2.0"
+  },
+  "dependencies": {
+    "electron-packager": "^15.2.0",
+    "jquery": "^3.5.1",
+    "request": "^2.88.2"
+  }
+}
